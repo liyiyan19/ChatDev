@@ -16,6 +16,10 @@ import logging
 import os
 import sys
 
+os.environ["OPENAI_API_KEY"] = "ollama-1-API-KEY"
+os.environ["OPENAI_API_BASE"] = "http://localhost:11434/v1"
+os.environ["MODEL"] = "deepseek-coder-v2:16b"
+
 from camel.typing import ModelType
 
 root = os.path.dirname(__file__)
@@ -97,6 +101,7 @@ args2type = {'GPT_3_5_TURBO': ModelType.GPT_3_5_TURBO,
             #  'GPT_4_TURBO_V': ModelType.GPT_4_TURBO_V
             'GPT_4O': ModelType.GPT_4O,
             'GPT_4O_MINI': ModelType.GPT_4O_MINI,
+            'DEEPSEEK_CODER_V2': ModelType.DEEPSEEK_CODER_V2,
              }
 if openai_new_api:
     args2type['GPT_3_5_TURBO'] = ModelType.GPT_3_5_TURBO_NEW
