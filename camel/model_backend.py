@@ -84,6 +84,7 @@ class OpenAIModel(ModelBackend):
 
             num_max_token_map = {
                 "gpt-3.5-turbo": 4096,
+                "deepseek-coder-v2:16b": 16384,
                 "gpt-3.5-turbo-16k": 16384,
                 "gpt-3.5-turbo-0613": 4096,
                 "gpt-3.5-turbo-16k-0613": 16384,
@@ -126,6 +127,7 @@ class OpenAIModel(ModelBackend):
                 "gpt-4-turbo": 100000,
                 "gpt-4o": 4096, #100000
                 "gpt-4o-mini": 16384, #100000
+                "deepseek-coder-v2:16b": 16384,
             }
             num_max_token = num_max_token_map[self.model_type.value]
             num_max_completion_tokens = num_max_token - num_prompt_tokens
